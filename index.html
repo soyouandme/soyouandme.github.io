@@ -1,67 +1,216 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RawCopyUtil 개인정보처리방침 / Privacy Policy</title>
+<title>RawCopyUtil — RawCopyUtil</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-         max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; }
-  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 2em; }
-  hr { margin: 3em 0; border: none; border-top: 1px solid #ddd; }
-  .meta { color: #888; font-size: 0.9em; }
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--accent:#2e75b6;--card:#f7f7f9}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#ececf0;--muted:#9a9aa0;--line:#2c2c30;--accent:#5aa9e6;--card:#1d1d20}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans KR","Noto Sans JP","Noto Sans TC","Noto Sans SC",sans-serif;
+ line-height:1.75;font-size:16px}
+.wrap{max-width:720px;margin:0 auto;padding:28px 20px 72px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+ padding-bottom:18px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none;color:var(--fg)}
+.spacer{flex:1}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;margin-left:14px}
+nav a:hover{color:var(--accent)}
+select{font:inherit;font-size:.88rem;padding:5px 10px;border-radius:8px;
+ border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px}
+h2{font-size:1.12rem;margin:2.2em 0 .5em}
+.eff{color:var(--muted);font-size:.86rem;margin:0 0 28px}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+code{background:var(--card);padding:2px 6px;border-radius:5px;font-size:.88em}
+.faq{margin-top:8px}
+.faq dt{font-weight:600;margin-top:1.5em}
+.faq dd{margin:.4em 0 0;color:var(--muted)}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:8px}
+.hero p{margin:0}
+.tagline{font-size:1.15rem;font-weight:600;margin-bottom:10px !important}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.links a{display:inline-block;padding:10px 18px;border-radius:10px;background:var(--accent);
+ color:#fff;text-decoration:none;font-size:.94rem;font-weight:500}
+.links a.ghost{background:transparent;border:1px solid var(--line);color:var(--fg)}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+ color:var(--muted);font-size:.84rem}
+[data-lang]{display:none}
+[data-lang][data-active]{display:block}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html">RawCopyUtil</a>
+    <div class="spacer"></div>
+    <nav>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <select id="langSel" aria-label="Language">
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+          <option value="ja">日本語</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+    </select>
+  </header>
+  <section data-lang="en" data-active>
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Copy the RAW originals that match your selected JPGs.</p>
+      <p>A macOS utility for photographers. After your client picks their favorites, RawCopyUtil matches those JPG files with your camera's RAW originals by filename and safely copies only the ones you need.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Support</a>
+      <a class="ghost" href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </section>
+  <section data-lang="ko">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">셀렉한 JPG에 맞는 RAW 원본을 자동으로 복사합니다.</p>
+      <p>사진작가를 위한 macOS 유틸리티입니다. 고객이 사진을 셀렉하고 나면, RawCopyUtil이 그 JPG 파일과 같은 이름의 RAW 원본을 찾아 필요한 것만 안전하게 복사합니다.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">지원</a>
+      <a class="ghost" href="privacy-policy.html">개인정보처리방침</a>
+    </div>
+  </section>
+  <section data-lang="ja">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">セレクト済みのJPGに対応するRAW原本を自動でコピーします。</p>
+      <p>写真家のためのmacOSユーティリティです。お客様がセレクトを終えたら、RawCopyUtilがそのJPGファイルと同じ名前のRAW原本を探し、必要なものだけを安全にコピーします。</p>
+    </div>
+    <div class="links">
+      <a href="support.html">サポート</a>
+      <a class="ghost" href="privacy-policy.html">プライバシーポリシー</a>
+    </div>
+  </section>
+  <section data-lang="zh-Hant">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">自動複製與所選JPG對應的RAW原片。</p>
+      <p>面向攝影師的macOS工具。客戶挑選完照片後，RawCopyUtil會按檔名找到對應的RAW原片，只把需要的安全複製過來。</p>
+    </div>
+    <div class="links">
+      <a href="support.html">支援</a>
+      <a class="ghost" href="privacy-policy.html">隱私政策</a>
+    </div>
+  </section>
+  <section data-lang="zh-Hans">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">自动复制与所选JPG对应的RAW原片。</p>
+      <p>面向摄影师的macOS工具。客户挑选完照片后，RawCopyUtil会按文件名找到对应的RAW原片，只把需要的安全复制过来。</p>
+    </div>
+    <div class="links">
+      <a href="support.html">支持</a>
+      <a class="ghost" href="privacy-policy.html">隐私政策</a>
+    </div>
+  </section>
+  <section data-lang="es">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Copia los RAW originales que corresponden a tus JPG elegidos.</p>
+      <p>Una utilidad de macOS para fotógrafos. Cuando tu cliente elige sus fotos, RawCopyUtil empareja esos JPG con los RAW originales de tu cámara por nombre de archivo y copia de forma segura solo los que necesitas.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Soporte</a>
+      <a class="ghost" href="privacy-policy.html">Política de privacidad</a>
+    </div>
+  </section>
+  <section data-lang="de">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Kopiert die RAW-Originale, die zu deinen ausgewählten JPGs passen.</p>
+      <p>Ein macOS-Werkzeug für Fotografen. Nachdem dein Kunde seine Favoriten gewählt hat, ordnet RawCopyUtil diese JPGs anhand des Dateinamens den RAW-Originalen zu und kopiert sicher nur die benötigten Dateien.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Support</a>
+      <a class="ghost" href="privacy-policy.html">Datenschutzerklärung</a>
+    </div>
+  </section>
+  <section data-lang="fr">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Copie les RAW originaux correspondant à vos JPG sélectionnés.</p>
+      <p>Un utilitaire macOS pour les photographes. Une fois que votre client a choisi ses photos, RawCopyUtil associe ces JPG aux RAW originaux par nom de fichier et copie en toute sécurité uniquement ceux dont vous avez besoin.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Assistance</a>
+      <a class="ghost" href="privacy-policy.html">Politique de confidentialité</a>
+    </div>
+  </section>
+  <section data-lang="it">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Copia i RAW originali corrispondenti ai JPG selezionati.</p>
+      <p>Un'utilità macOS per fotografi. Dopo che il cliente ha scelto le sue foto, RawCopyUtil abbina quei JPG ai RAW originali in base al nome del file e copia in sicurezza solo quelli che ti servono.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Assistenza</a>
+      <a class="ghost" href="privacy-policy.html">Informativa sulla privacy</a>
+    </div>
+  </section>
+  <section data-lang="pt">
+    <h1>RawCopyUtil</h1>
+    <div class="hero">
+      <p class="tagline">Copia os RAW originais correspondentes aos seus JPG selecionados.</p>
+      <p>Um utilitário macOS para fotógrafos. Depois que seu cliente escolhe as fotos, o RawCopyUtil combina esses JPG com os RAW originais pelo nome do arquivo e copia com segurança apenas os necessários.</p>
+    </div>
+    <div class="links">
+      <a href="support.html">Suporte</a>
+      <a class="ghost" href="privacy-policy.html">Política de Privacidade</a>
+    </div>
+  </section>
 
-<h1>RawCopyUtil 개인정보처리방침</h1>
-<p class="meta">시행일: 2026년 7월 11일</p>
-
-<p>RawCopyUtil(이하 "앱")은 사용자의 개인정보를 <strong>일절 수집하지
-않습니다</strong>.</p>
-
-<h2>수집하는 정보</h2>
-<p>없습니다. 앱은 계정, 로그인, 분석 도구, 광고 SDK를 사용하지 않으며
-어떠한 서버와도 통신하지 않습니다.</p>
-
-<h2>파일 접근</h2>
-<p>앱은 사용자가 직접 선택한 폴더의 사진 파일(RAW/JPG)에만 접근하며,
-모든 처리(파일명 매칭, 복사, 검증)는 사용자의 Mac에서만 이루어집니다.
-파일이나 파일 정보가 기기 밖으로 전송되는 일은 없습니다.</p>
-
-<h2>로그</h2>
-<p>문제 진단을 위한 작업 로그가 사용자 Mac의 앱 샌드박스 내부에만
-저장되며, 30일 후 자동 삭제됩니다. 로그는 사용자가 직접 내보내기를
-실행하지 않는 한 어디로도 전송되지 않습니다.</p>
-
-<h2>문의</h2>
-<p>박지수 (Jisoo Park) — <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a></p>
-
-<hr>
-
-<h1>RawCopyUtil Privacy Policy</h1>
-<p class="meta">Effective date: July 11, 2026</p>
-
-<p>RawCopyUtil ("the app") does <strong>not collect any personal
-information</strong>.</p>
-
-<h2>Data Collection</h2>
-<p>None. The app has no accounts, no login, no analytics, no
-advertising SDKs, and communicates with no servers.</p>
-
-<h2>File Access</h2>
-<p>The app only accesses photo files (RAW/JPG) in folders you
-explicitly select. All processing — filename matching, copying,
-verification — happens locally on your Mac. No files or file
-metadata ever leave your device.</p>
-
-<h2>Logs</h2>
-<p>Diagnostic logs are stored only inside the app's sandbox on your
-Mac and are automatically deleted after 30 days. Logs are never
-transmitted anywhere unless you manually export them yourself.</p>
-
-<h2>Contact</h2>
-<p>Jisoo Park — <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a></p>
-
+  <footer>© 2026 Jisoo Park · <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a></footer>
+</div>
+<script>
+(function(){
+  var LANGS=["en", "ko", "ja", "zh-Hant", "zh-Hans", "es", "de", "fr", "it", "pt"];
+  var sel=document.getElementById('langSel');
+  function apply(code){
+    if(LANGS.indexOf(code)<0) code='en';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      if(el.getAttribute('data-lang')===code) el.setAttribute('data-active','');
+      else el.removeAttribute('data-active');
+    });
+    document.documentElement.setAttribute('lang',code);
+    sel.value=code;
+    try{localStorage.setItem('rcu_lang',code);}catch(e){}
+  }
+  function detect(){
+    var saved=null;
+    try{saved=localStorage.getItem('rcu_lang');}catch(e){}
+    if(saved&&LANGS.indexOf(saved)>=0) return saved;
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<navs.length;i++){
+      var n=navs[i].toLowerCase();
+      if(n.indexOf('zh')===0){
+        if(n.indexOf('hant')>=0||n.indexOf('tw')>=0||n.indexOf('hk')>=0||n.indexOf('mo')>=0) return 'zh-Hant';
+        return 'zh-Hans';
+      }
+      for(var j=0;j<LANGS.length;j++){
+        if(n.indexOf(LANGS[j].toLowerCase().split('-')[0])===0&&LANGS[j].indexOf('zh')<0) return LANGS[j];
+      }
+    }
+    return 'en';
+  }
+  sel.addEventListener('change',function(){apply(sel.value);});
+  apply(detect());
+})();
+</script>
 </body>
 </html>

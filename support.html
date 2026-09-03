@@ -1,67 +1,306 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RawCopyUtil 지원 / Support</title>
+<title>Support — RawCopyUtil</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-         max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; }
-  h1 { font-size: 1.6em; } h2 { font-size: 1.2em; margin-top: 2em; }
-  hr { margin: 3em 0; border: none; border-top: 1px solid #ddd; }
-  .faq dt { font-weight: 600; margin-top: 1.2em; }
-  .faq dd { margin-left: 0; color: #444; }
+:root{--bg:#fff;--fg:#1c1c1e;--muted:#6b6b70;--line:#e5e5ea;--accent:#2e75b6;--card:#f7f7f9}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#ececf0;--muted:#9a9aa0;--line:#2c2c30;--accent:#5aa9e6;--card:#1d1d20}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"Noto Sans KR","Noto Sans JP","Noto Sans TC","Noto Sans SC",sans-serif;
+ line-height:1.75;font-size:16px}
+.wrap{max-width:720px;margin:0 auto;padding:28px 20px 72px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+ padding-bottom:18px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none;color:var(--fg)}
+.spacer{flex:1}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;margin-left:14px}
+nav a:hover{color:var(--accent)}
+select{font:inherit;font-size:.88rem;padding:5px 10px;border-radius:8px;
+ border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+h1{font-size:1.7rem;line-height:1.3;margin:0 0 6px}
+h2{font-size:1.12rem;margin:2.2em 0 .5em}
+.eff{color:var(--muted);font-size:.86rem;margin:0 0 28px}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+code{background:var(--card);padding:2px 6px;border-radius:5px;font-size:.88em}
+.faq{margin-top:8px}
+.faq dt{font-weight:600;margin-top:1.5em}
+.faq dd{margin:.4em 0 0;color:var(--muted)}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:8px}
+.hero p{margin:0}
+.tagline{font-size:1.15rem;font-weight:600;margin-bottom:10px !important}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.links a{display:inline-block;padding:10px 18px;border-radius:10px;background:var(--accent);
+ color:#fff;text-decoration:none;font-size:.94rem;font-weight:500}
+.links a.ghost{background:transparent;border:1px solid var(--line);color:var(--fg)}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+ color:var(--muted);font-size:.84rem}
+[data-lang]{display:none}
+[data-lang][data-active]{display:block}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html">RawCopyUtil</a>
+    <div class="spacer"></div>
+    <nav>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <select id="langSel" aria-label="Language">
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+          <option value="ja">日本語</option>
+          <option value="zh-Hant">繁體中文</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+    </select>
+  </header>
+  <section data-lang="en" data-active>
+    <h1>Support</h1>
+    <p>RawCopyUtil is a macOS tool for photographers that matches and copies RAW files based on client-selected JPGs. For any issue or feature request, please get in touch.</p>
+    <h2>Contact</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>We usually reply within 2–3 business days.</p>
+    <h2>Frequently Asked Questions</h2>
+    <dl class="faq">
+      <dt>My RAW files aren't matching.</dt>
+      <dd>The JPG and RAW files must share the same base filename — for example <code>IMG_0001.JPG</code> and <code>IMG_0001.ARW</code>. Capitalization does not matter.</dd>
+      <dt>I got an error while copying.</dt>
+      <dd>Check the error code (RC-xxxx) and the suggested fix shown in the log. If the problem continues, use Export Log (⌘E) and email us the ZIP file — it helps us diagnose quickly.</dd>
+      <dt>Does it work with external drives and NAS?</dt>
+      <dd>Yes. exFAT, NTFS and HFS+ external drives as well as network drives are supported, including non-English filenames.</dd>
+      <dt>Can my original files be damaged?</dt>
+      <dd>The RAW source folder is only ever read. When overwriting, the app uses a safe atomic replace via temporary files and backups, so existing files are never corrupted. You can also enable SHA-256 verification to confirm every copy.</dd>
+      <dt>How does the free trial work?</dt>
+      <dd>All features are available free for 10 days. After that, a single in-app purchase unlocks the app permanently. If you reinstall or switch Macs, use “Restore Purchases”.</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Privacy Policy</a></p>
+  </section>
+  <section data-lang="ko">
+    <h1>지원</h1>
+    <p>RawCopyUtil은 고객이 셀렉한 JPG를 기준으로 RAW 파일을 찾아 복사해 주는 macOS 도구입니다. 문제가 있거나 기능 제안이 있으시면 편하게 연락 주세요.</p>
+    <h2>문의</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>보통 2~3일 내에 답변드립니다.</p>
+    <h2>자주 묻는 질문</h2>
+    <dl class="faq">
+      <dt>RAW 파일이 매칭되지 않아요.</dt>
+      <dd>JPG와 RAW의 파일명(확장자 제외)이 같아야 합니다. 예를 들어 <code>IMG_0001.JPG</code>와 <code>IMG_0001.ARW</code>처럼요. 대소문자는 구분하지 않습니다.</dd>
+      <dt>복사 중 오류가 났어요.</dt>
+      <dd>로그에 표시되는 에러 코드(RC-xxxx)와 해결 방법을 확인해 주세요. 계속된다면 '로그 내보내기'(⌘E)로 만든 ZIP 파일을 이메일로 보내주시면 빠르게 확인해 드립니다.</dd>
+      <dt>외장 디스크나 NAS에서도 쓸 수 있나요?</dt>
+      <dd>네. exFAT, NTFS, HFS+ 외장 디스크와 네트워크 드라이브를 지원하며 한글 파일명도 문제없이 처리합니다.</dd>
+      <dt>원본 파일이 손상될 위험은 없나요?</dt>
+      <dd>RAW 원본 폴더는 읽기만 합니다. 덮어쓸 때도 임시 파일과 백업을 거치는 안전한 교체 방식이라 기존 파일이 손상되지 않으며, SHA-256 검증을 켜면 복사 결과를 하나하나 확인할 수 있습니다.</dd>
+      <dt>무료 체험은 어떻게 되나요?</dt>
+      <dd>10일 동안 모든 기능을 무료로 사용할 수 있습니다. 이후에는 한 번의 인앱 결제로 영구히 사용하실 수 있고, 재설치하거나 다른 Mac에서 쓰실 때는 '구매 복원'을 눌러주세요.</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">개인정보처리방침</a></p>
+  </section>
+  <section data-lang="ja">
+    <h1>サポート</h1>
+    <p>RawCopyUtilは、お客様がセレクトしたJPGをもとにRAWファイルを探してコピーするmacOSツールです。問題やご要望がありましたらお気軽にご連絡ください。</p>
+    <h2>お問い合わせ</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>通常2〜3営業日以内に返信いたします。</p>
+    <h2>よくある質問</h2>
+    <dl class="faq">
+      <dt>RAWファイルがマッチングされません。</dt>
+      <dd>JPGとRAWのファイル名（拡張子を除く）が同じである必要があります。例：<code>IMG_0001.JPG</code>と<code>IMG_0001.ARW</code>。大文字小文字は区別しません。</dd>
+      <dt>コピー中にエラーが出ました。</dt>
+      <dd>ログに表示されるエラーコード（RC-xxxx）と対処方法をご確認ください。解決しない場合は「ログを書き出す」（⌘E）で作成したZIPファイルをメールでお送りいただければ、すぐに確認いたします。</dd>
+      <dt>外付けディスクやNASでも使えますか？</dt>
+      <dd>はい。exFAT、NTFS、HFS+の外付けディスクおよびネットワークドライブに対応しており、日本語のファイル名も問題なく扱えます。</dd>
+      <dt>元のファイルが壊れる心配はありませんか？</dt>
+      <dd>RAW原本フォルダは読み取りのみです。上書き時も一時ファイルとバックアップを経由する安全な置換方式のため、既存ファイルが壊れることはありません。SHA-256検証を有効にすれば、コピー結果を1件ずつ確認できます。</dd>
+      <dt>無料トライアルについて教えてください。</dt>
+      <dd>10日間すべての機能を無料でご利用いただけます。その後は一度のアプリ内課金で永続的にご利用可能です。再インストール時や別のMacでご利用の際は「購入を復元」をお使いください。</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">プライバシーポリシー</a></p>
+  </section>
+  <section data-lang="zh-Hant">
+    <h1>支援</h1>
+    <p>RawCopyUtil是一款macOS工具，可根據客戶挑選的JPG查詢並複製對應的RAW檔案。如有問題或建議，歡迎隨時聯絡。</p>
+    <h2>聯絡方式</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>我們通常在2至3個工作日內回覆。</p>
+    <h2>常見問題</h2>
+    <dl class="faq">
+      <dt>RAW檔案無法匹配。</dt>
+      <dd>JPG與RAW的檔名（不含副檔名）必須一致，例如<code>IMG_0001.JPG</code>與<code>IMG_0001.ARW</code>。不區分大小寫。</dd>
+      <dt>複製過程中出現錯誤。</dt>
+      <dd>請檢視日誌中顯示的錯誤程式碼（RC-xxxx）及解決建議。若問題仍然存在，請使用“匯出日誌”（⌘E）生成ZIP檔案併傳送給我們，便於快速排查。</dd>
+      <dt>支援外接硬碟或NAS嗎？</dt>
+      <dd>支援。可用於exFAT、NTFS、HFS+外接硬碟以及網路驅動器，中文檔名也能正常處理。</dd>
+      <dt>原始檔案會不會損壞？</dt>
+      <dd>RAW原片資料夾僅供讀取。覆蓋時採用經由臨時檔案與備份的安全替換方式，不會損壞已有檔案。您還可以開啟SHA-256校驗，逐一確認複製結果。</dd>
+      <dt>免費試用是怎樣的？</dt>
+      <dd>10天內可免費使用全部功能。之後透過一次應用內購買即可永久使用。重灌或更換Mac時，請點選“恢復購買”。</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">隱私政策</a></p>
+  </section>
+  <section data-lang="zh-Hans">
+    <h1>支持</h1>
+    <p>RawCopyUtil是一款macOS工具，可根据客户挑选的JPG查找并复制对应的RAW文件。如有问题或建议，欢迎随时联系。</p>
+    <h2>联系方式</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>我们通常在2至3个工作日内回复。</p>
+    <h2>常见问题</h2>
+    <dl class="faq">
+      <dt>RAW文件无法匹配。</dt>
+      <dd>JPG与RAW的文件名（不含扩展名）必须一致，例如<code>IMG_0001.JPG</code>与<code>IMG_0001.ARW</code>。不区分大小写。</dd>
+      <dt>复制过程中出现错误。</dt>
+      <dd>请查看日志中显示的错误代码（RC-xxxx）及解决建议。若问题仍然存在，请使用“导出日志”（⌘E）生成ZIP文件并发送给我们，便于快速排查。</dd>
+      <dt>支持外置硬盘或NAS吗？</dt>
+      <dd>支持。可用于exFAT、NTFS、HFS+外置硬盘以及网络驱动器，中文文件名也能正常处理。</dd>
+      <dt>原始文件会不会损坏？</dt>
+      <dd>RAW原片文件夹仅供读取。覆盖时采用经由临时文件与备份的安全替换方式，不会损坏已有文件。您还可以开启SHA-256校验，逐一确认复制结果。</dd>
+      <dt>免费试用是怎样的？</dt>
+      <dd>10天内可免费使用全部功能。之后通过一次应用内购买即可永久使用。重装或更换Mac时，请点击“恢复购买”。</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">隐私政策</a></p>
+  </section>
+  <section data-lang="es">
+    <h1>Soporte</h1>
+    <p>RawCopyUtil es una herramienta de macOS que busca y copia archivos RAW a partir de los JPG elegidos por tu cliente. Si tienes algún problema o sugerencia, escríbenos.</p>
+    <h2>Contacto</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>Normalmente respondemos en 2–3 días laborables.</p>
+    <h2>Preguntas frecuentes</h2>
+    <dl class="faq">
+      <dt>Mis archivos RAW no se emparejan.</dt>
+      <dd>Los archivos JPG y RAW deben compartir el mismo nombre base, por ejemplo <code>IMG_0001.JPG</code> e <code>IMG_0001.ARW</code>. Las mayúsculas no importan.</dd>
+      <dt>Se produjo un error al copiar.</dt>
+      <dd>Consulta el código de error (RC-xxxx) y la solución sugerida que aparecen en el registro. Si continúa, usa Exportar registro (⌘E) y envíanos el archivo ZIP por correo.</dd>
+      <dt>¿Funciona con discos externos y NAS?</dt>
+      <dd>Sí. Se admiten discos externos exFAT, NTFS y HFS+, así como unidades de red, incluidos los nombres de archivo con caracteres no ingleses.</dd>
+      <dt>¿Pueden dañarse mis archivos originales?</dt>
+      <dd>La carpeta RAW de origen solo se lee. Al sobrescribir, la app usa un reemplazo atómico seguro mediante archivos temporales y copias de seguridad, por lo que tus archivos nunca se corrompen. También puedes activar la verificación SHA-256.</dd>
+      <dt>¿Cómo funciona la prueba gratuita?</dt>
+      <dd>Todas las funciones están disponibles gratis durante 10 días. Después, una única compra dentro de la app la desbloquea para siempre. Si reinstalas o cambias de Mac, usa «Restaurar compras».</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Política de privacidad</a></p>
+  </section>
+  <section data-lang="de">
+    <h1>Support</h1>
+    <p>RawCopyUtil ist ein macOS-Werkzeug, das RAW-Dateien anhand der vom Kunden ausgewählten JPGs findet und kopiert. Bei Problemen oder Wünschen melde dich gerne.</p>
+    <h2>Kontakt</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>Wir antworten in der Regel innerhalb von 2–3 Werktagen.</p>
+    <h2>Häufige Fragen</h2>
+    <dl class="faq">
+      <dt>Meine RAW-Dateien werden nicht zugeordnet.</dt>
+      <dd>JPG und RAW müssen denselben Dateinamen ohne Endung haben, zum Beispiel <code>IMG_0001.JPG</code> und <code>IMG_0001.ARW</code>. Groß- und Kleinschreibung spielt keine Rolle.</dd>
+      <dt>Beim Kopieren ist ein Fehler aufgetreten.</dt>
+      <dd>Prüfe den Fehlercode (RC-xxxx) und den Lösungshinweis im Protokoll. Bleibt das Problem bestehen, exportiere das Protokoll (⌘E) und sende uns die ZIP-Datei per E-Mail.</dd>
+      <dt>Funktioniert es mit externen Festplatten und NAS?</dt>
+      <dd>Ja. Externe Festplatten mit exFAT, NTFS und HFS+ sowie Netzlaufwerke werden unterstützt, auch mit nicht-englischen Dateinamen.</dd>
+      <dt>Können meine Originaldateien beschädigt werden?</dt>
+      <dd>Der RAW-Quellordner wird ausschließlich gelesen. Beim Überschreiben nutzt die App einen sicheren atomaren Austausch über temporäre Dateien und Backups, sodass vorhandene Dateien nie beschädigt werden. Zusätzlich kannst du die SHA-256-Prüfung aktivieren.</dd>
+      <dt>Wie funktioniert die kostenlose Testphase?</dt>
+      <dd>Alle Funktionen sind 10 Tage lang kostenlos verfügbar. Danach schaltet ein einmaliger In-App-Kauf die App dauerhaft frei. Bei einer Neuinstallation oder auf einem anderen Mac nutze „Käufe wiederherstellen“.</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Datenschutzerklärung</a></p>
+  </section>
+  <section data-lang="fr">
+    <h1>Assistance</h1>
+    <p>RawCopyUtil est un outil macOS qui trouve et copie les fichiers RAW à partir des JPG choisis par votre client. En cas de problème ou de suggestion, n'hésitez pas à nous écrire.</p>
+    <h2>Contact</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>Nous répondons généralement sous 2 à 3 jours ouvrés.</p>
+    <h2>Questions fréquentes</h2>
+    <dl class="faq">
+      <dt>Mes fichiers RAW ne correspondent pas.</dt>
+      <dd>Les fichiers JPG et RAW doivent porter le même nom de base, par exemple <code>IMG_0001.JPG</code> et <code>IMG_0001.ARW</code>. La casse n'a pas d'importance.</dd>
+      <dt>Une erreur est survenue pendant la copie.</dt>
+      <dd>Consultez le code d'erreur (RC-xxxx) et la solution proposée dans le journal. Si le problème persiste, utilisez Exporter le journal (⌘E) et envoyez-nous le fichier ZIP par e-mail.</dd>
+      <dt>Est-ce compatible avec les disques externes et les NAS ?</dt>
+      <dd>Oui. Les disques externes exFAT, NTFS et HFS+ ainsi que les lecteurs réseau sont pris en charge, y compris avec des noms de fichiers non anglais.</dd>
+      <dt>Mes fichiers originaux risquent-ils d'être endommagés ?</dt>
+      <dd>Le dossier RAW source est uniquement lu. Lors d'un écrasement, l'app utilise un remplacement atomique sécurisé via des fichiers temporaires et des sauvegardes : vos fichiers existants ne sont jamais corrompus. Vous pouvez aussi activer la vérification SHA-256.</dd>
+      <dt>Comment fonctionne l'essai gratuit ?</dt>
+      <dd>Toutes les fonctions sont gratuites pendant 10 jours. Ensuite, un achat intégré unique débloque l'app définitivement. En cas de réinstallation ou de changement de Mac, utilisez « Restaurer les achats ».</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Politique de confidentialité</a></p>
+  </section>
+  <section data-lang="it">
+    <h1>Assistenza</h1>
+    <p>RawCopyUtil è uno strumento macOS che trova e copia i file RAW in base ai JPG scelti dal cliente. Per qualsiasi problema o suggerimento, scrivici pure.</p>
+    <h2>Contatti</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>Di norma rispondiamo entro 2–3 giorni lavorativi.</p>
+    <h2>Domande frequenti</h2>
+    <dl class="faq">
+      <dt>I miei file RAW non vengono abbinati.</dt>
+      <dd>I file JPG e RAW devono avere lo stesso nome di base, ad esempio <code>IMG_0001.JPG</code> e <code>IMG_0001.ARW</code>. Le maiuscole non contano.</dd>
+      <dt>Si è verificato un errore durante la copia.</dt>
+      <dd>Controlla il codice di errore (RC-xxxx) e la soluzione suggerita nel log. Se il problema persiste, usa Esporta log (⌘E) e inviaci il file ZIP via e-mail.</dd>
+      <dt>Funziona con dischi esterni e NAS?</dt>
+      <dd>Sì. Sono supportati dischi esterni exFAT, NTFS e HFS+ e unità di rete, inclusi i nomi di file non inglesi.</dd>
+      <dt>I miei file originali possono danneggiarsi?</dt>
+      <dd>La cartella RAW di origine viene solo letta. In caso di sovrascrittura, l'app usa una sostituzione atomica sicura con file temporanei e backup, quindi i file esistenti non vengono mai danneggiati. Puoi anche attivare la verifica SHA-256.</dd>
+      <dt>Come funziona la prova gratuita?</dt>
+      <dd>Tutte le funzioni sono gratuite per 10 giorni. Dopodiché un unico acquisto in-app sblocca l'app per sempre. Se reinstalli o cambi Mac, usa «Ripristina acquisti».</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Informativa sulla privacy</a></p>
+  </section>
+  <section data-lang="pt">
+    <h1>Suporte</h1>
+    <p>O RawCopyUtil é uma ferramenta macOS que encontra e copia arquivos RAW com base nos JPG escolhidos pelo cliente. Em caso de problema ou sugestão, fale com a gente.</p>
+    <h2>Contato</h2>
+    <p><a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>Normalmente respondemos em 2 a 3 dias úteis.</p>
+    <h2>Perguntas frequentes</h2>
+    <dl class="faq">
+      <dt>Meus arquivos RAW não estão sendo correspondidos.</dt>
+      <dd>Os arquivos JPG e RAW precisam ter o mesmo nome base, por exemplo <code>IMG_0001.JPG</code> e <code>IMG_0001.ARW</code>. Maiúsculas e minúsculas não importam.</dd>
+      <dt>Ocorreu um erro durante a cópia.</dt>
+      <dd>Verifique o código de erro (RC-xxxx) e a solução sugerida no registro. Se persistir, use Exportar registro (⌘E) e envie o arquivo ZIP por e-mail.</dd>
+      <dt>Funciona com discos externos e NAS?</dt>
+      <dd>Sim. Discos externos exFAT, NTFS e HFS+ e unidades de rede são compatíveis, incluindo nomes de arquivo não ingleses.</dd>
+      <dt>Meus arquivos originais podem ser danificados?</dt>
+      <dd>A pasta RAW de origem é apenas lida. Ao sobrescrever, o app usa uma substituição atômica segura por meio de arquivos temporários e backups, então seus arquivos existentes nunca são corrompidos. Você também pode ativar a verificação SHA-256.</dd>
+      <dt>Como funciona o teste gratuito?</dt>
+      <dd>Todos os recursos ficam gratuitos por 10 dias. Depois, uma única compra no app libera tudo permanentemente. Se reinstalar ou trocar de Mac, use “Restaurar compras”.</dd>
+    </dl>
+    <p style="margin-top:2em"><a href="privacy-policy.html">Política de Privacidade</a></p>
+  </section>
 
-<h1>RawCopyUtil 지원</h1>
-
-<p>RawCopyUtil은 사진작가를 위한 macOS용 RAW 파일 매칭·복사
-도구입니다. 사용 중 문제가 있거나 기능 제안이 있으면 아래
-이메일로 연락해 주세요.</p>
-
-<p><strong>문의:</strong> <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>
-가능한 한 2~3일 내에 답변드립니다.</p>
-
-<h2>자주 묻는 질문</h2>
-<dl class="faq">
-<dt>Q. RAW 파일이 매칭되지 않아요.</dt>
-<dd>A. JPG와 RAW의 파일명(확장자 제외)이 같아야 합니다.
-예: <code>IMG_0001.JPG</code> ↔ <code>IMG_0001.ARW</code>.
-대소문자는 구분하지 않습니다.</dd>
-
-<dt>Q. 복사 중 오류가 났어요.</dt>
-<dd>A. 로그 창의 에러 코드(RC-xxxx)와 함께 안내되는 해결
-방법을 확인해 주세요. 해결되지 않으면 앱의 "로그 내보내기"
-(⌘E)로 만든 ZIP 파일을 이메일로 보내주시면 빠르게 확인해
-드립니다.</dd>
-
-<dt>Q. 외장 디스크에서도 쓸 수 있나요?</dt>
-<dd>A. 네. exFAT/NTFS/HFS+ 외장 디스크와 NAS를 지원하며,
-한글 파일명도 문제없이 처리됩니다.</dd>
-
-<dt>Q. 원본 파일이 손상될 위험은 없나요?</dt>
-<dd>A. RAW 원본 폴더는 읽기만 합니다. 덮어쓰기 시에도 임시
-파일과 백업을 거치는 안전 복사 방식이라 기존 파일이 손상되지
-않으며, SHA-256 해시 검증 옵션으로 복사 결과를 확인할 수
-있습니다.</dd>
-</dl>
-
-<p><a href="privacy-policy.html">개인정보처리방침</a></p>
-
-<hr>
-
-<h1>RawCopyUtil Support</h1>
-
-<p>RawCopyUtil is a macOS tool for photographers that matches and
-copies RAW files based on selected JPGs. For any issues or feature
-requests, please contact:</p>
-
-<p><strong>Email:</strong> <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a><br>
-We usually reply within 2–3 business days.</p>
-
-<p><a href="privacy-policy.html">Privacy Policy</a></p>
-
+  <footer>© 2026 Jisoo Park · <a href="mailto:soyoudd@naver.com">soyoudd@naver.com</a></footer>
+</div>
+<script>
+(function(){
+  var LANGS=["en", "ko", "ja", "zh-Hant", "zh-Hans", "es", "de", "fr", "it", "pt"];
+  var sel=document.getElementById('langSel');
+  function apply(code){
+    if(LANGS.indexOf(code)<0) code='en';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      if(el.getAttribute('data-lang')===code) el.setAttribute('data-active','');
+      else el.removeAttribute('data-active');
+    });
+    document.documentElement.setAttribute('lang',code);
+    sel.value=code;
+    try{localStorage.setItem('rcu_lang',code);}catch(e){}
+  }
+  function detect(){
+    var saved=null;
+    try{saved=localStorage.getItem('rcu_lang');}catch(e){}
+    if(saved&&LANGS.indexOf(saved)>=0) return saved;
+    var navs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<navs.length;i++){
+      var n=navs[i].toLowerCase();
+      if(n.indexOf('zh')===0){
+        if(n.indexOf('hant')>=0||n.indexOf('tw')>=0||n.indexOf('hk')>=0||n.indexOf('mo')>=0) return 'zh-Hant';
+        return 'zh-Hans';
+      }
+      for(var j=0;j<LANGS.length;j++){
+        if(n.indexOf(LANGS[j].toLowerCase().split('-')[0])===0&&LANGS[j].indexOf('zh')<0) return LANGS[j];
+      }
+    }
+    return 'en';
+  }
+  sel.addEventListener('change',function(){apply(sel.value);});
+  apply(detect());
+})();
+</script>
 </body>
 </html>
