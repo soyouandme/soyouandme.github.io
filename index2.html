@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>식전영상 샘플 | 그날 그 순간</title>
+<meta name="description" content="제주 야외 웨딩 · 드론 영상 '그날 그 순간'의 식전영상 샘플입니다.">
+<meta name="theme-color" content="#EDEFEC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1211" media="(prefers-color-scheme: dark)">
+
+<!-- 카카오톡 · 인스타그램에서 링크 미리보기에 쓰이는 정보 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="그날 그 순간">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="식전영상 샘플 | 그날 그 순간">
+<meta property="og:description" content="제주 야외 웨딩 · 드론 영상. 소리를 켜고 봐주세요.">
+<!-- 도메인이 정해지면 아래 두 줄의 주석을 풀고 절대주소로 채워주세요.
+     og:image 는 1200×630 권장이며, 없으면 미리보기에 이미지가 안 나옵니다. -->
+<!-- <meta property="og:url" content="https://도메인/"> -->
+<!-- <meta property="og:image" content="https://도메인/cover.jpg"> -->
+
+<!--
+  ============================================================
+  그날 그 순간 — 식전영상 소개 페이지
+  인스타그램 프로필 링크용 (모바일 우선)
+  ============================================================
+
+  [1] 영상
+      아래 <script> 의 SAMPLES 배열에 ID가 들어가 있습니다.
+        https://vimeo.com/1227662353  →  id: "1227662353"
+      영상을 추가하려면 배열에 { id, label } 을 하나 더 넣으면 됩니다.
+      비공개(해시가 붙는) 링크라면 hash: "xxxxxxx" 를 함께 넣어주세요.
+
+  [2] 소리 문제 대응
+      인스타 앱 내부 브라우저에서 자동재생되면 무음으로 강제되기 때문에,
+      이 페이지는 자동재생을 쓰지 않습니다. 방문자가 플레이 버튼을
+      직접 누르게 해서 소리가 함께 재생되도록 했습니다.
+      앱 내부 브라우저로 들어온 경우에만 상단 안내가 강조됩니다.
+
+  [3] 연락처
+      카카오톡 채널 : https://pf.kakao.com/_hxaxaBG  (검색용 아이디 그날그순간_)
+      인스타그램     : https://www.instagram.com/thatday.moment/
+      바꿀 때는 문의 섹션의 두 링크를 고치면 됩니다.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* ---------- 토큰 : 밝은 화면 ---------- */
+  :root {
+    --ground:   #EDEFEC;
+    --surface:  #E5E8E3;
+    --ink:      #161C1A;
+    --ink-soft: #454F4B;
+    --muted:    #78837D;
+    --line:     #CCD2CB;
+    --line-2:   #DDE1DC;
+    --accent:   #2C5C58;
+    --ember:    #A9663F;
+    --grain:    .05;
+
+    --f-display: "Gowun Batang", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+    --f-body:    "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  /* ---------- 토큰 : 어두운 화면 ---------- */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #0F1211;
+      --surface:  #171B1A;
+      --ink:      #E9ECE7;
+      --ink-soft: #A9B2AC;
+      --muted:    #7C857F;
+      --line:     #2A302E;
+      --line-2:   #1E2322;
+      --accent:   #7FBDB3;
+      --ember:    #D2996E;
+      --grain:    .07;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:   #0F1211;
+    --surface:  #171B1A;
+    --ink:      #E9ECE7;
+    --ink-soft: #A9B2AC;
+    --muted:    #7C857F;
+    --line:     #2A302E;
+    --line-2:   #1E2322;
+    --accent:   #7FBDB3;
+    --ember:    #D2996E;
+    --grain:    .07;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    color-scheme: light dark;
+    -webkit-text-size-adjust: 100%;   /* 아이폰 가로 전환 시 글자 확대 방지 */
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 필름 그레인 */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: var(--grain);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: .6875rem;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; text-wrap: balance; }
+
+  .fill {
+    border-bottom: 1px dashed var(--ember);
+    color: var(--ember);
+    white-space: nowrap;
+  }
+
+  /* ---------- 머리말 ---------- */
+  .top {
+    padding-block: 1.75rem .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .mark {
+    font-family: var(--f-display);
+    font-size: 1rem;
+    letter-spacing: .04em;
+    text-decoration: none;
+  }
+
+  .intro { padding-block: 1.5rem 1.5rem; }
+  .intro h1 {
+    font-size: clamp(2.125rem, 9vw, 3.25rem);
+    line-height: 1.12;
+    letter-spacing: -.01em;
+  }
+
+  /* ---------- 소리 안내 ---------- */
+  .sound {
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--line-2);
+    background: var(--surface);
+    padding: 1.1rem 1.25rem 1.25rem;
+    margin-block: .5rem 2.5rem;
+  }
+  .sound .eyebrow { color: var(--accent); margin-bottom: .5rem; }
+  .sound h2 {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: .4rem;
+  }
+  .sound p {
+    margin: 0;
+    font-size: .875rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  /* 인스타 앱 내부 브라우저에서만 보이는 안내 */
+  .inapp-only { display: none; }
+  body.inapp .inapp-only { display: block; }
+
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: 1rem;
+  }
+  .btn {
+    font-family: var(--f-body);
+    font-size: .8125rem;
+    padding: .55rem 1rem;
+    border: 1px solid var(--line);
+    background: var(--ground);
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color .2s, color .2s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn[data-done="1"] { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- 영상 ---------- */
+  .film { margin: 0 0 2.75rem; }
+  .film-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .75rem;
+  }
+  .film-head h2 { font-size: 1.25rem; line-height: 1.3; }
+  .film-head .no {
+    font-family: var(--f-mono);
+    font-size: .75rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .frame {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #0B0D0C;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .slate {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: .5rem;
+    text-align: center;
+    padding: 1.25rem;
+    color: #8A938D;
+    font-family: var(--f-mono);
+    font-size: .75rem;
+    letter-spacing: .06em;
+  }
+
+  /* ---------- 문의 ---------- */
+  .contact {
+    padding-block: 2.5rem 1rem;
+    border-top: 1px solid var(--line-2);
+  }
+  .contact .eyebrow { margin-bottom: 1.1rem; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .85rem 1.5rem;
+    background: var(--accent);
+    color: var(--ground);
+    text-decoration: none;
+    font-size: .9375rem;
+  }
+  .cta::after { content: "→"; font-family: var(--f-mono); }
+
+  /* 연락 수단 목록 */
+  .lines { list-style: none; margin: 1.75rem 0 0; padding: 0; }
+  .lines li {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: .2rem 1rem;
+    align-items: baseline;
+    padding-block: .85rem;
+    border-bottom: 1px solid var(--line-2);
+    font-size: .9375rem;
+  }
+  .lines li:first-child { border-top: 1px solid var(--line-2); }
+  .lines li:last-child { border-bottom: 0; }
+  .lines dfn {
+    font-family: var(--f-mono);
+    font-size: .6875rem;
+    font-style: normal;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .lines a { text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .lines a:hover { text-decoration-color: var(--accent); }
+  @media (max-width: 26rem) {
+    .lines li { grid-template-columns: 1fr; gap: .15rem; }
+  }
+
+  footer {
+    padding-block: 2.5rem 3rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--line-2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 1.5rem;
+    font-family: var(--f-mono);
+    font-size: .6875rem;
+    letter-spacing: .06em;
+    color: var(--muted);
+  }
+  footer .since { font-variant-numeric: tabular-nums; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrap top">
+  <a class="mark" href="#top">그날 그 순간</a>
+  <p class="eyebrow">제주 · 야외 웨딩</p>
+</div>
+
+<main class="wrap" id="top">
+
+  <section class="intro">
+    <p class="eyebrow">Sample</p>
+    <h1>식전영상 샘플</h1>
+  </section>
+
+  <!-- 소리 안내 -->
+  <section class="sound">
+    <p class="eyebrow">🔊 Sound on</p>
+    <h2>소리를 켜고 봐주세요</h2>
+    <p>
+      기기 음량과 무음 모드를 먼저 확인해주세요. 플레이 버튼을 직접
+      누르면 소리가 함께 재생됩니다.
+    </p>
+    <p class="inapp-only" style="margin-top:.6rem">
+      지금 인스타그램 앱 안의 브라우저로 보고 계십니다. 여기서는 소리가
+      막힐 수 있어서, 오른쪽 위 <strong>⋯</strong> 버튼 →
+      <strong>외부 브라우저에서 열기</strong>(Chrome · Safari)로 보시는 게
+      가장 확실합니다.
+    </p>
+    <div class="tools">
+      <button class="btn" type="button" id="copy">페이지 링크 복사</button>
+    </div>
+  </section>
+
+  <!-- 영상들 : 스크립트가 이 안을 채웁니다 -->
+  <div id="films">
+    <noscript>
+      <p style="color:var(--ember)">영상을 보려면 자바스크립트를 켜주세요.</p>
+    </noscript>
+  </div>
+
+  <!-- 문의 -->
+  <section class="contact" id="contact">
+    <p class="eyebrow">Contact</p>
+
+    <a class="cta" href="https://pf.kakao.com/_hxaxaBG" target="_blank" rel="noopener">
+      카카오톡 채널로 문의
+    </a>
+
+    <ul class="lines">
+      <li>
+        <dfn>Instagram</dfn>
+        <span>
+          <a href="https://www.instagram.com/thatday.moment/" target="_blank" rel="noopener">@thatday.moment</a>
+        </span>
+      </li>
+      <li>
+        <dfn>Based in</dfn>
+        <span>제주</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>그날 그 순간 — 야외 웨딩 &amp; 드론 영상</span>
+  <span class="since">Since 2024</span>
+</footer>
+
+<script>
+  /* =========== 영상 목록 =========== */
+  const SAMPLES = [
+    { id: "1227662353", label: "식전영상 Sample 01" },
+    { id: "1221501593", label: "식전영상 Sample 02" }
+    // 추가하려면 아래처럼 한 줄 더:
+    // { id: "0000000000", label: "식전영상 Sample 03" }
+  ];
+  /* ================================= */
+
+  /* 영상 심기 — 자동재생을 쓰지 않아야 소리가 함께 재생됩니다 */
+  (function () {
+    const host = document.getElementById("films");
+    if (!host) return;
+
+    SAMPLES.forEach(function (s, i) {
+      const params = new URLSearchParams({
+        title: "0", byline: "0", portrait: "0",
+        playsinline: "1", autoplay: "0", muted: "0", dnt: "1"
+      });
+      if (s.hash) params.set("h", s.hash);
+
+      const fig = document.createElement("figure");
+      fig.className = "film";
+
+      const head = document.createElement("div");
+      head.className = "film-head";
+      const h2 = document.createElement("h2");
+      h2.textContent = s.label;
+      const no = document.createElement("span");
+      no.className = "no";
+      no.textContent = String(i + 1).padStart(2, "0") + " / " + String(SAMPLES.length).padStart(2, "0");
+      head.append(h2, no);
+
+      const frame = document.createElement("div");
+      frame.className = "frame";
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://player.vimeo.com/video/" + s.id + "?" + params.toString();
+      iframe.title = s.label;
+      iframe.loading = i === 0 ? "eager" : "lazy";
+      iframe.allow = "fullscreen; picture-in-picture";
+      iframe.setAttribute("allowfullscreen", "");
+      frame.appendChild(iframe);
+
+      fig.append(head, frame);
+      host.appendChild(fig);
+    });
+  })();
+
+  /* 인스타·페이스북 앱 내부 브라우저 감지 */
+  (function () {
+    const ua = navigator.userAgent || "";
+    if (/Instagram|FBAN|FBAV|FB_IAB|KAKAOTALK|NAVER\(inapp/i.test(ua)) {
+      document.body.classList.add("inapp");
+    }
+  })();
+
+  /* 링크 복사 */
+  (function () {
+    const btn = document.getElementById("copy");
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.addEventListener("click", function () {
+      const url = location.href;
+      const done = function () {
+        btn.textContent = "링크를 복사했습니다";
+        btn.dataset.done = "1";
+        setTimeout(function () {
+          btn.textContent = original;
+          delete btn.dataset.done;
+        }, 2400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); done(); }
+        catch (e) { btn.textContent = "주소창의 링크를 직접 복사해주세요"; }
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
